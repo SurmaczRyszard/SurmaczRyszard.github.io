@@ -110,19 +110,19 @@ a:focus {
 }
 
 .invert {
-  color: var(--link-color-hover);
+  color: var(--link-color);
   text-decoration: none;
   -webkit-transition: all 0.12s linear;
   transition: all 0.12s linear;
 }
 .invert:hover {
-  color: var(--link-color);
+  color: var(--link-color-hover);
 }
 .invert:active {
-  color: var(--link-color);
+  color: var(--link-color-hover);
 }
 .invert:focus {
-  color: var(--link-color);
+  color: var(--link-color-hover);
   outline: none;
 }
 
@@ -1296,7 +1296,7 @@ textarea {
 }
 .c-card__content {
   padding: calc(var(--baseline) * 7) 0;
-  color: var(--gray-2);
+  color: var(--gray);
 }
 .c-card__title {
   font-size: 2rem;
@@ -2325,17 +2325,33 @@ textarea {
 }
 */
 
+/* large header text */
 .custom-header-text {
   color: var(--gray-1);
-  font-size: clamp(1rem, 1rem + 0.125 * (100vw - 20rem) / 80, 1.125rem);
+  /*font-size: clamp(1rem, 1rem + 0.125 * (100vw - 20rem) / 80, 1.125rem);*/
   padding-bottom: 0;
   max-width: cals(var(--entry-width)*2);
 }
 .custom-header-text h1 {
   margin-top: 0;
   letter-spacing: 0.01ch;
-  font-size: clamp(6rem, calc(4.667rem + 0.37vw), 10rem);
+  /*font-size: clamp(6rem, calc(4.667rem + 0.37vw), 10rem);*/
 }
+
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 601px) {
+  div.custom-header-text h1 {
+    font-size: clamp(6rem, calc(4.667rem + 0.37vw), 10rem);
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  div.custom-header-text h1 {
+    font-size: 17vw;
+  }
+}
+
 .custom-header-text h1 sup {
   font-variation-settings: "wght" var(--font-weight-normal);
   font-size: 1.125rem;
