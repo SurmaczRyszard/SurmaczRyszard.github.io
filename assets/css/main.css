@@ -655,6 +655,7 @@ textarea {
   margin-top: 2rem;
   max-width: var(--page-width);
   position: relative;
+  justify-content: end;
 }
 @media all and (min-width: 80.0625em) and (min-height: 50em) {
   .header {
@@ -685,6 +686,10 @@ textarea {
   width: auto;
 }
 
+body.home-template .logo {
+  display: none;
+}
+
 .search {
   margin-right: 1.5rem;
   order: 2;
@@ -697,6 +702,7 @@ textarea {
     order: 3;
   }
 }
+
 .search__btn {
   border: none;
   background: none !important;
